@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7769 鴻勁｜機構級深度分析</title>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --card: #141720;
+    --border: #232733;
+    --text: #e6e8eb;
+    --muted: #9aa3b2;
+    --green: #4ade80;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+    --orange: #fb923c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .header {
+    border-left: 6px solid var(--green);
+    padding-left: 16px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, rgba(74,222,128,0.08), transparent);
+    border-radius: 0 12px 12px 0;
+  }
+  .header h1 { margin: 0; font-size: 24px; }
+  .header p { margin: 6px 0 0; opacity: .9; }
+  .meta { font-size: 12px; opacity: .65; margin-top: 6px; }
+  .grid { display: grid; gap: 14px; }
+  .col-2 { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 860px) { .col-2 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  }
+  .card h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    opacity: .95;
+  }
+  h1 { font-size: 22px; margin: 18px 0 10px; }
+  h2 { font-size: 18px; margin-top: 22px; margin-bottom: 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  h3 { font-size: 15px; margin-top: 14px; margin-bottom: 8px; }
+  hr { border: 1px solid var(--border); margin: 22px 0; }
+  p, li { line-height: 1.75; font-size: 14px; }
+  ul { padding-left: 18px; }
+  blockquote {
+    border-left: 4px solid var(--yellow);
+    padding: 10px 14px;
+    margin: 10px 0;
+    background: rgba(251,191,36,0.06);
+    border-radius: 0 10px 10px 0;
+  }
+  /* 表格：統一邊框、隔行底色、標籤欄底色 */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 13.5px;
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  thead th, tr:first-child th {
+    background: #1b2030;
+    color: var(--text);
+    font-weight: 700;
+  }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+  /* KV 表（項目｜內容）：標籤欄底綠 */
+  table.kv td.lbl {
+    background: rgba(74,222,128,0.10);
+    font-weight: 600;
+    white-space: nowrap;
+    width: 1%;
+  }
+  .footer {
+    opacity: .55;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: right;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1>7769 鴻勁｜機構級深度分析</h1>
+    <p>法人籌碼驅動 · 機構級視角 · 3–6 個月操作框架</p>
+    <div class="meta">與 7769_Daily_Report.md 同步更新（無圖表格版）</div>
+  </div>
+
+  <div class="grid col-2">
+    <div class="card">
+      <h3>📄 報告全文</h3>
+      <p>📈 券商籌碼損益明細（五日內 / 近30日）</p>
+<p>近 5 交易日 現價 6705</p>
+<p>🔺 做多賺錢：</p>
+<div style="overflow-x:auto;"><table>
+  <tr><th>券商</th><th>淨買(張)</th><th>成本</th><th>估賺(萬)</th></tr>
+  <tr><td>元大-大雅</td><td>18</td><td>4753</td><td>3513</td></tr>
+  <tr><td>台灣摩根士丹利</td><td>16</td><td>4941</td><td>2822</td></tr>
+  <tr><td>玉山-台中</td><td>10</td><td>5817</td><td>888</td></tr>
+  <tr><td>摩根大通</td><td>134</td><td>6653</td><td>702</td></tr>
+  <tr><td>香港上海匯豐</td><td>40</td><td>6531</td><td>694</td></tr>
+</table></div>
+<p>🛡 減碼/放空避險成功（賣在>現價）：</p>
+<div style="overflow-x:auto;"><table>
+  <tr><th>券商</th><th>淨賣(張)</th><th>賣均</th><th>避損(萬)</th></tr>
+  <tr><td>新光-台南</td><td>3</td><td>6800</td><td>28</td></tr>
+  <tr><td>富邦-青埔</td><td>4</td><td>6800</td><td>38</td></tr>
+  <tr><td>元大-土城永寧</td><td>1</td><td>7110</td><td>40</td></tr>
+  <tr><td>國票-敦北法人</td><td>7</td><td>6771</td><td>46</td></tr>
+  <tr><td>台新-新莊</td><td>10</td><td>6800</td><td>95</td></tr>
+</table></div>
+<p>近 30 交易日（2026/05/29 ~ 2026/07/13） 現價 6705</p>
+<p>🔺 做多賺錢：</p>
+<div style="overflow-x:auto;"><table>
+  <tr><th>券商</th><th>淨買(張)</th><th>成本</th><th>估賺(萬)</th></tr>
+  <tr><td>元大-大雅</td><td>230</td><td>6484</td><td>5088</td></tr>
+  <tr><td>凱基</td><td>14</td><td>4915</td><td>2506</td></tr>
+  <tr><td>美商高盛</td><td>324</td><td>6633</td><td>2339</td></tr>
+  <tr><td>凱基-台北</td><td>194</td><td>6627</td><td>1517</td></tr>
+  <tr><td>玉山-台中</td><td>9</td><td>5139</td><td>1409</td></tr>
+</table></div>
+<p>🛡 減碼/放空避險成功（賣在>現價）：</p>
+<div style="overflow-x:auto;"><table>
+  <tr><th>券商</th><th>淨賣(張)</th><th>賣均</th><th>避損(萬)</th></tr>
+  <tr><td>玉山-信義</td><td>3</td><td>6810</td><td>32</td></tr>
+  <tr><td>台新-林園</td><td>2</td><td>6865</td><td>32</td></tr>
+  <tr><td>元大-南京</td><td>2</td><td>6865</td><td>32</td></tr>
+  <tr><td>永豐金-匯立</td><td>229</td><td>6707</td><td>52</td></tr>
+  <tr><td>第一金-頭份</td><td>1</td><td>7330</td><td>62</td></tr>
+</table></div>
+<p>※ 成本以區間每日淨買超×當日收盤加權推算，未計手續費稅，為近似推估。</p>
+<hr style="border:1px solid var(--border);margin:18px 0;"><h1>7769 鴻勁 — 機構級深度分析報告</h1>
+<p>分析日期：2026-07-14　數據截至：2026-07-13 收盤
+收盤價：NT$6,705（＋0.68%）｜開 6,990 / 高 6,995 / 低 6,605
+持股參考：本號持倉 1,200 股，均價 NT$6,612，浮盈＋111,000 元（＋1.4%）</p>
+<p>---</p>
+<h2 id="1. 核心診斷：高檔結構性整理（中性偏多，方向選擇待破）">1. 核心診斷：高檔結構性整理（中性偏多，方向選擇待破）</h2>
+<p>7769 當前並非乾淨的主升段，也非標準反轉或出貨，而是「強基本面＋籌碼鎖倉」對抗「技術弱勢＋外部半導體賣壓」的結構性整理。</p>
+<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">多方錨</td><td>6 月營收 53.02 億、年增＋106.5%、月增＋28.4%，呈爆發性加速；券商買方佔比 53.14%、近 30 日主力（元大-大雅 230 張＠6,484、美商高盛 324 張＠6,633）明顯鎖倉；MACD 與 OBV 雙底背離初現。</td></tr><tr><td class="lbl">空方錨</td><td>股價跌破 MA20（6,805）、VWAP20（6,836）、POC（6,773）；費半 SOX 單日 -4.78% 摜破 20 日均線；外資持續調節（台指期留倉 -80,730、單月賣超 -3,194 億）；高盛（-80）、大摩（-50）、瑞銀（-27）同步倒貨。</td></tr></table>
+<p>技術面 advanced_score 為 -30（強空共振），但被營收與籌碼權重（x1.2）大幅抵消。系統「共振分數 100%」是未遮罩的共振值，經風險遮罩（修正A）後真實信心應落在 82 分上下——投資人應以 82 而非 100 為決策基準。</p>
+<p>---</p>
+<h2 id="2. 籌碼判斷：主力洗盤鎖倉，外資邊拉邊撤">2. 籌碼判斷：主力洗盤鎖倉，外資邊拉邊撤</h2>
+<p>結論：內資主力（元大系、國泰、凱基）低檔吸籌鎖倉；外資（美系、歐系）逢高減碼，屬「內外資換手、洗盤待攻」格局，尚非出貨。</p>
+<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">做多賺錢的證據</td><td>元大-大雅 近 30 日淨買 230 張、成本 6,484、估賺 5,088 萬；凱基淨買 14 張＠4,915、估賺 2,506 萬；美商高盛雖當日倒貨 -80，但 30 日仍淨買 324 張＠6,633、估賺 2,339 萬——代表外資成本亦高於現價，殺低非全面棄守。</td></tr><tr><td class="lbl">避險成功者</td><td>新光-台南、富邦-青埔、元大-土城永寧 賣在 6,800 以上避損，屬短線獲利了結，非趨勢性撤退。</td></tr><tr><td class="lbl">隱憂</td><td>借券餘額 85,000 股（前日 74,000），單日淨增 +11,000，空單升溫；外資持股比率 19.46%（5 日均 19.51%）微降。此為洗盤過程中的浮額測試，若借券連續 3 日以上累增，須升級為出貨警訊。</td></tr></table>
+<p>---</p>
+<h2 id="3. 關鍵支撐位（由近到遠）">3. 關鍵支撐位（由近到遠）</h2>
+<div style="overflow-x:auto;"><table>
+  <tr><th>順位</th><th>價位</th><th>性質</th></tr>
+  <tr><td>S1</td><td>6,660</td><td>前支撐區、5 日防守線，短線多空分水嶺</td></tr>
+  <tr><td>S2</td><td>6,637.6</td><td>斐波那契 0.618 拉回，與前支撐 6,655 共振✅</td></tr>
+  <tr><td>S3</td><td>6,525</td><td>抄底進場區間上沿（系統評分 48／觀察中）</td></tr>
+  <tr><td>S4</td><td>6,484</td><td>元大-大雅 30 日主力成本線——機構防守底</td></tr>
+  <tr><td>S5</td><td>6,395</td><td>波段低＠50、M 頭頸線、破底翻支撐（多空總司令部）</td></tr>
+  <tr><td>S6</td><td>6,094</td><td>布林下軌／超賣抄底價（CCI/MFI/KD 同步轉正才看）</td></tr>
+  <tr><td>S7</td><td>5,760</td><td>M 頭等幅測量目標（極端破頸線尾部風險）</td></tr>
+</table></div>
+<p>---</p>
+<h2 id="4. 關鍵壓力位（由近到遠）">4. 關鍵壓力位（由近到遠）</h2>
+<div style="overflow-x:auto;"><table>
+  <tr><th>順位</th><th>價位</th><th>性質</th></tr>
+  <tr><td>R1</td><td>6,755</td><td>近端壓力、突破確認價</td></tr>
+  <tr><td>R2</td><td>6,773.1</td><td>POC 量價密集區（站穩且量比≥1.4 才轉強）</td></tr>
+  <tr><td>R3</td><td>6,787.4</td><td>斐波那契 0.382 反彈目標</td></tr>
+  <tr><td>R4</td><td>6,805</td><td>MA20／趨勢買入價（回踩不破轉多）</td></tr>
+  <tr><td>R5</td><td>6,836.0</td><td>VWAP20（重新站上＝短線空方結構翻多）</td></tr>
+  <tr><td>R6</td><td>7,030</td><td>波段高＠53（突破＝整理結束、主升啟動）</td></tr>
+  <tr><td>R7</td><td>7,515.9</td><td>布林上軌（估值與情緒雙重壓力帶）</td></tr>
+</table></div>
+<p>---</p>
+<h2 id="5. 短線劇本（未來 3 日，2026-07-14 ～ 07-16）">5. 短線劇本（未來 3 日，2026-07-14 ～ 07-16）</h2>
+<p>外部半導體賣壓（SOX -4.78%）將主導開盤情緒，但內資主力成本墊高＋營收催化提供下檔支撐，預期區間震盪、逢壓回落、逢撐有守。</p>
+<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">劇本 A｜區間消化（機率 45%）</td><td>開低測 6,660～6,637 後，受營收催化與主力護盤拉回 6,755～6,805，受制 MA20 與 SOX 弱勢壓回，收在 6,660～6,805 箱體內。</td></tr><tr><td class="lbl">劇本 B｜外資拖累破撐（機率 35%）</td><td>SOX 續跌＋借券再增，摜破 6,660 測 6,525～6,484（元大-大雅成本線）找支撐，當日出現長下影後收復部分跌幅。</td></tr><tr><td class="lbl">劇本 C｜催化帶量突破（機率 20%）</td><td>半導體設備族群續強、量比≥1.4 站穩 POC 6,773，一舉收復 MA20（6,805）並挑戰 7,030，啟動短線攻擊波。</td></tr></table>
+<blockquote>Kronos 路徑預測：目標 6,823（＋1.75%）、24h 上漲機率 80%、預測波動率 88.4%；TimesFM 看漲＋1.08%。兩模型偏多，但須以量能確認為前提，勿追價。</blockquote>
+<p>---</p>
+<h2 id="6. 波段劇本（1 ～ 3 個月）">6. 波段劇本（1 ～ 3 個月）</h2>
+<p>基本面（營收年增翻倍）是中期上攻引擎，技術面（跌破均線）與外部（SOX、外資調節）是壓制力。三情景：</p>
+<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">樂觀｜基本面主導突破（機率 40%）</td><td>SOX 止跌、大盤回穩，7769 在 6,395～7,030 完成洗盤，Q2 EPS 因 6 月營收爆發優於預估（33.11→上修），帶量突破 7,030 挑戰 7,500～8,000。</td></tr><tr><td class="lbl">中性｜高檔箱型整理（機率 35%）</td><td>6,000～7,000 區間反覆洗盤，元大-大雅型主力續堆量，等待財報與外部環境轉多訊號。</td></tr><tr><td class="lbl">悲觀｜M 頭成形（機率 25%）</td><td>SOX 續崩、外資倒貨加速，摜破頸線 6,395，等幅測量指向 5,760；借券連增確認出貨。</td></tr></table>
+<p>---</p>
+<h2 id="7. 風險警訊（嚴重性分級）">7. 風險警訊（嚴重性分級）</h2>
+<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">🔴 高｜費半 SOX -4.78% 摜破 20 日均線</td><td>外部半導體賣壓直接拖累 7769 開盤，觀察能否抗跌。</td></tr><tr><td class="lbl">🔴 高｜外資法人同步減碼</td><td>高盛 -80、大摩 -50、瑞銀 -27，且外資持股比率與股數雙降（35,018,555←35,116,603），為最實質的籌碼賣壓。</td></tr><tr><td class="lbl">🟠 中｜借券賣出淨增 +11,000 至 85,000 股</td><td>空單升溫；若連續 3 日累增，警訊升級為出貨。</td></tr><tr><td class="lbl">🟠 中｜技術結構弱勢</td><td>收盤低於 MA20（-1.5%）、VWAP20、POC；advanced_score -30；ML RSI Analog 偏空（analog_score -0.3642、rank 3.18/10）。</td></tr><tr><td class="lbl">🟡 低｜模型過度樂觀</td><td>系統「共振 100%」與風險遮罩後 82 分、偏空 ML、SOX 弱勢矛盾；決策請以遮罩後 82 分為準。</td></tr><tr><td class="lbl">🟡 低｜M 頭雛形</td><td>頸線 6,395 若帶量跌破，測量目標 5,760，為尾部風險而非主基調。</td></tr></table>
+<p>---</p>
+<h2 id="8. 合理估值區間（Forward PEG，NTM EPS 103.37 元）">8. 合理估值區間（Forward PEG，NTM EPS 103.37 元）</h2>
+<p>現價 6,705 對應 P/E 64.9 倍、主表 PEG（g＝61.74%）≈ 1.05，已落在「合理價值偏上緣」——便宜成長的甜點區已基本反應，後續為「財報確認」而非「估值修復」行情。若 Q2 EPS 因 6 月營收爆發優於預估 33.11，NTM EPS 上修將整體區間上移。</p>
+<div style="overflow-x:auto;"><table>
+  <tr><th>情景</th><th>PEG 假設</th><th>合理股價區間</th><th>評價</th></tr>
+  <tr><td>保守</td><td>主表 g、PEG 0.9～1.0</td><td>5,740 ～ 6,380</td><td>成長不變但本益比壓縮；若改用保守情景 g＝36.53%、PEG 1.0 則降至 3,776（成長趨緩極端底線，機率低但須納入尾部）</td></tr>
+  <tr><td>中性</td><td>主表 g、PEG 1.0～1.1</td><td>6,380 ～ 7,020</td><td>現價 6,705 位於此區下緣，屬「合理持有、不便宜」</td></tr>
+  <tr><td>樂觀</td><td>主表 g、PEG 1.1～1.2（含 EPS beat）</td><td>7,020 ～ 7,660</td><td>動能溢價＋Q2 優於預期，逼近布林上軌前的合理高檔</td></tr>
+</table></div>
+<p>---</p>
+<h2 id="9. 操作建議">9. 操作建議</h2>
+<p>持股者（均價 6,612，浮盈＋1.4%）
+- 續抱為主，享營收動能與主力鎖倉紅利；移動停利設於跌破 6,484（元大-大雅成本線）減碼一半，摜破 6,395（頸線）全數出清。
+- 不追高，6,755～6,805 區間若量能不足可逢高調節 1/3 鎖利。</p>
+<p>空手者
+- 現價 6,705 已非低估，不宜追價；等待回測支撐的買點勝率與賠率較佳。</p>
+<p>加碼價位
+- 第一加碼：6,637～6,660（Fib 0.618 共振＋前支撐），量縮不破才接。
+- 第二加碼：6,484～6,525（主力成本線＋抄底區上沿），分批建立。
+- 第三加碼（大膽）：6,094 布林下軌，僅限 CCI/MFI/KD 同步轉正時。</p>
+<p>止損價位
+- 短線停損：6,055（偏多參考停損，破則結構轉空）。
+- 波段嚴格停損：6,092（抄底紀律線），摜破代表 M 頭機率驟升，離場觀望。</p>
+<p>---</p>
+<h2 id="10. 法人觀點小結">10. 法人觀點小結</h2>
+<p>1. 基本面是最強護城河：6 月營收年增翻倍、月增＋28.4%，Q2 EPS 具上修潛力，是對抗技術弱勢與外部賣壓的根本底氣，中期不看空。
+2. 籌碼呈內外資換手：內資主力（元大系、國泰、凱基）低檔鎖倉獲利豐厚，外資逢高調節但未全面棄守（成本亦高於現價），當前為洗盤非出貨。
+3. 技術面與外部環境是短期逆風：跌破 MA20/VWAP、SOX -4.78%、台指期貼水 296 點，短線上攻需量能確認，忌無量追價。
+4. 估值已合理、不便宜：現價 PEG≈1.05 處合理價值上緣，後續行情由「財報確認」驅動，買點應等回測支撐（6,637／6,484）而非追高。
+5. 操作紀律凌駕情緒：以 6,395 頸線為多空總司令部，守則抱、破則撤；模型「100% 共振」須折價為遮罩後 82 分使用，避免過度樂觀。</p>
+<blockquote>本報告為量化模型輔助之機構級解讀，非個股買賣建議；所有價位均為機率參考，實際進出請依當日量價與總體環境調整。</blockquote>
+
+    </div>
+    <div class="card">
+      <h3>📌 重點摘要</h3>
+      <div id="summary"></div>
+      <script>
+        (function(){
+          const h2s = document.querySelectorAll('.wrap h2');
+          const box = document.getElementById('summary');
+          const map = {
+            '核心診斷': '🎯', '籌碼判斷': '💎', '關鍵支撐位': '🛡️', '關鍵壓力位': '🔺',
+            '短線劇本': '📅', '波段劇本': '🌊', '風險警訊': '⚠️', '合理估值區間': '💡', '操作建議': '✅', '法人觀點小結': '🧠'
+          };
+          let html = '';
+          h2s.forEach(el => {
+            const t = el.textContent.trim();
+            const key = t.split('（')[0].split('(')[0].trim();
+            const icon = map[key] || '📌';
+            html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--border);"><div style="width:28px;text-align:center;">' + icon + '</div><div style="font-size:13px;opacity:.9;">' + t + '</div></div>';
+          });
+          box.innerHTML = html || '<p style="opacity:.7;font-size:13px;">請開啟報告全文查看。</p>';
+        })();
+      </script>
+    </div>
+  </div>
+
+  <div class="footer">本分析為機構級視角的判斷框架，實際交易請配合自身風險承受度與資金控管，並落實機械式止損紀律。祝交易順利。</div>
+</div>
+</body>
+</html>

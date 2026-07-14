@@ -65,7 +65,6 @@
     background: rgba(251,191,36,0.06);
     border-radius: 0 10px 10px 0;
   }
-  /* 表格：統一邊框、隔行底色、標籤欄底色 */
   table {
     border-collapse: collapse;
     width: 100%;
@@ -88,7 +87,6 @@
     font-weight: 700;
   }
   tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
-  /* KV 表（項目｜內容）：標籤欄底綠 */
   table.kv td.lbl {
     background: rgba(74,222,128,0.10);
     font-weight: 600;
@@ -103,166 +101,126 @@
     padding-top: 12px;
     border-top: 1px solid var(--border);
   }
+  /* 解鎖覆蓋層 */
+  #lock {
+    position: fixed; inset: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(5,7,11,0.96);
+  }
+  #lock .box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 32px; width: min(92vw, 360px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.6); text-align: center;
+  }
+  #lock h2 { border: none; margin: 0 0 6px; font-size: 18px; }
+  #lock p { opacity: .7; font-size: 13px; margin: 0 0 16px; }
+  #lock input {
+    width: 100%; padding: 11px 12px; font-size: 15px; text-align: center;
+    letter-spacing: 2px; border-radius: 10px; border: 1px solid var(--border);
+    background: #0b0d12; color: var(--text); margin-bottom: 12px;
+  }
+  #lock button {
+    width: 100%; padding: 11px; font-size: 15px; font-weight: 700;
+    border: none; border-radius: 10px; cursor: pointer;
+    background: var(--green); color: #08130c;
+  }
+  #lock .err { color: var(--red); font-size: 12.5px; min-height: 16px; margin-top: 8px; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div id="lock">
+  <div class="box">
+    <h2>🔒 報告已加密</h2>
+    <p>請輸入密碼以解鎖查看</p>
+    <input id="pw" type="password" inputmode="numeric" autocomplete="off" placeholder="••••••••••" />
+    <button id="unlock">解鎖</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<div class="wrap" id="main" style="visibility:hidden;">
   <div class="header">
     <h1>7769 鴻勁｜機構級深度分析</h1>
     <p>法人籌碼驅動 · 機構級視角 · 3–6 個月操作框架</p>
-    <div class="meta">與 7769_Daily_Report.md 同步更新（無圖表格版）</div>
+    <div class="meta">與 7769_Daily_Report.md 同步更新（加密表格版）</div>
   </div>
 
   <div class="grid col-2">
     <div class="card">
       <h3>📄 報告全文</h3>
-      <p>📈 券商籌碼損益明細（五日內 / 近30日）</p>
-<p>近 5 交易日 現價 6705</p>
-<p>🔺 做多賺錢：</p>
-<div style="overflow-x:auto;"><table>
-  <tr><th>券商</th><th>淨買(張)</th><th>成本</th><th>估賺(萬)</th></tr>
-  <tr><td>元大-大雅</td><td>18</td><td>4753</td><td>3513</td></tr>
-  <tr><td>台灣摩根士丹利</td><td>16</td><td>4941</td><td>2822</td></tr>
-  <tr><td>玉山-台中</td><td>10</td><td>5817</td><td>888</td></tr>
-  <tr><td>摩根大通</td><td>134</td><td>6653</td><td>702</td></tr>
-  <tr><td>香港上海匯豐</td><td>40</td><td>6531</td><td>694</td></tr>
-</table></div>
-<p>🛡 減碼/放空避險成功（賣在>現價）：</p>
-<div style="overflow-x:auto;"><table>
-  <tr><th>券商</th><th>淨賣(張)</th><th>賣均</th><th>避損(萬)</th></tr>
-  <tr><td>新光-台南</td><td>3</td><td>6800</td><td>28</td></tr>
-  <tr><td>富邦-青埔</td><td>4</td><td>6800</td><td>38</td></tr>
-  <tr><td>元大-土城永寧</td><td>1</td><td>7110</td><td>40</td></tr>
-  <tr><td>國票-敦北法人</td><td>7</td><td>6771</td><td>46</td></tr>
-  <tr><td>台新-新莊</td><td>10</td><td>6800</td><td>95</td></tr>
-</table></div>
-<p>近 30 交易日（2026/05/29 ~ 2026/07/13） 現價 6705</p>
-<p>🔺 做多賺錢：</p>
-<div style="overflow-x:auto;"><table>
-  <tr><th>券商</th><th>淨買(張)</th><th>成本</th><th>估賺(萬)</th></tr>
-  <tr><td>元大-大雅</td><td>230</td><td>6484</td><td>5088</td></tr>
-  <tr><td>凱基</td><td>14</td><td>4915</td><td>2506</td></tr>
-  <tr><td>美商高盛</td><td>324</td><td>6633</td><td>2339</td></tr>
-  <tr><td>凱基-台北</td><td>194</td><td>6627</td><td>1517</td></tr>
-  <tr><td>玉山-台中</td><td>9</td><td>5139</td><td>1409</td></tr>
-</table></div>
-<p>🛡 減碼/放空避險成功（賣在>現價）：</p>
-<div style="overflow-x:auto;"><table>
-  <tr><th>券商</th><th>淨賣(張)</th><th>賣均</th><th>避損(萬)</th></tr>
-  <tr><td>玉山-信義</td><td>3</td><td>6810</td><td>32</td></tr>
-  <tr><td>台新-林園</td><td>2</td><td>6865</td><td>32</td></tr>
-  <tr><td>元大-南京</td><td>2</td><td>6865</td><td>32</td></tr>
-  <tr><td>永豐金-匯立</td><td>229</td><td>6707</td><td>52</td></tr>
-  <tr><td>第一金-頭份</td><td>1</td><td>7330</td><td>62</td></tr>
-</table></div>
-<p>※ 成本以區間每日淨買超×當日收盤加權推算，未計手續費稅，為近似推估。</p>
-<hr style="border:1px solid var(--border);margin:18px 0;"><h1>7769 鴻勁 — 機構級深度分析報告</h1>
-<p>分析日期：2026-07-14　數據截至：2026-07-13 收盤
-收盤價：NT$6,705（＋0.68%）｜開 6,990 / 高 6,995 / 低 6,605
-持股參考：本號持倉 1,200 股，均價 NT$6,612，浮盈＋111,000 元（＋1.4%）</p>
-<p>---</p>
-<h2 id="1. 核心診斷：高檔結構性整理（中性偏多，方向選擇待破）">1. 核心診斷：高檔結構性整理（中性偏多，方向選擇待破）</h2>
-<p>7769 當前並非乾淨的主升段，也非標準反轉或出貨，而是「強基本面＋籌碼鎖倉」對抗「技術弱勢＋外部半導體賣壓」的結構性整理。</p>
-<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">多方錨</td><td>6 月營收 53.02 億、年增＋106.5%、月增＋28.4%，呈爆發性加速；券商買方佔比 53.14%、近 30 日主力（元大-大雅 230 張＠6,484、美商高盛 324 張＠6,633）明顯鎖倉；MACD 與 OBV 雙底背離初現。</td></tr><tr><td class="lbl">空方錨</td><td>股價跌破 MA20（6,805）、VWAP20（6,836）、POC（6,773）；費半 SOX 單日 -4.78% 摜破 20 日均線；外資持續調節（台指期留倉 -80,730、單月賣超 -3,194 億）；高盛（-80）、大摩（-50）、瑞銀（-27）同步倒貨。</td></tr></table>
-<p>技術面 advanced_score 為 -30（強空共振），但被營收與籌碼權重（x1.2）大幅抵消。系統「共振分數 100%」是未遮罩的共振值，經風險遮罩（修正A）後真實信心應落在 82 分上下——投資人應以 82 而非 100 為決策基準。</p>
-<p>---</p>
-<h2 id="2. 籌碼判斷：主力洗盤鎖倉，外資邊拉邊撤">2. 籌碼判斷：主力洗盤鎖倉，外資邊拉邊撤</h2>
-<p>結論：內資主力（元大系、國泰、凱基）低檔吸籌鎖倉；外資（美系、歐系）逢高減碼，屬「內外資換手、洗盤待攻」格局，尚非出貨。</p>
-<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">做多賺錢的證據</td><td>元大-大雅 近 30 日淨買 230 張、成本 6,484、估賺 5,088 萬；凱基淨買 14 張＠4,915、估賺 2,506 萬；美商高盛雖當日倒貨 -80，但 30 日仍淨買 324 張＠6,633、估賺 2,339 萬——代表外資成本亦高於現價，殺低非全面棄守。</td></tr><tr><td class="lbl">避險成功者</td><td>新光-台南、富邦-青埔、元大-土城永寧 賣在 6,800 以上避損，屬短線獲利了結，非趨勢性撤退。</td></tr><tr><td class="lbl">隱憂</td><td>借券餘額 85,000 股（前日 74,000），單日淨增 +11,000，空單升溫；外資持股比率 19.46%（5 日均 19.51%）微降。此為洗盤過程中的浮額測試，若借券連續 3 日以上累增，須升級為出貨警訊。</td></tr></table>
-<p>---</p>
-<h2 id="3. 關鍵支撐位（由近到遠）">3. 關鍵支撐位（由近到遠）</h2>
-<div style="overflow-x:auto;"><table>
-  <tr><th>順位</th><th>價位</th><th>性質</th></tr>
-  <tr><td>S1</td><td>6,660</td><td>前支撐區、5 日防守線，短線多空分水嶺</td></tr>
-  <tr><td>S2</td><td>6,637.6</td><td>斐波那契 0.618 拉回，與前支撐 6,655 共振✅</td></tr>
-  <tr><td>S3</td><td>6,525</td><td>抄底進場區間上沿（系統評分 48／觀察中）</td></tr>
-  <tr><td>S4</td><td>6,484</td><td>元大-大雅 30 日主力成本線——機構防守底</td></tr>
-  <tr><td>S5</td><td>6,395</td><td>波段低＠50、M 頭頸線、破底翻支撐（多空總司令部）</td></tr>
-  <tr><td>S6</td><td>6,094</td><td>布林下軌／超賣抄底價（CCI/MFI/KD 同步轉正才看）</td></tr>
-  <tr><td>S7</td><td>5,760</td><td>M 頭等幅測量目標（極端破頸線尾部風險）</td></tr>
-</table></div>
-<p>---</p>
-<h2 id="4. 關鍵壓力位（由近到遠）">4. 關鍵壓力位（由近到遠）</h2>
-<div style="overflow-x:auto;"><table>
-  <tr><th>順位</th><th>價位</th><th>性質</th></tr>
-  <tr><td>R1</td><td>6,755</td><td>近端壓力、突破確認價</td></tr>
-  <tr><td>R2</td><td>6,773.1</td><td>POC 量價密集區（站穩且量比≥1.4 才轉強）</td></tr>
-  <tr><td>R3</td><td>6,787.4</td><td>斐波那契 0.382 反彈目標</td></tr>
-  <tr><td>R4</td><td>6,805</td><td>MA20／趨勢買入價（回踩不破轉多）</td></tr>
-  <tr><td>R5</td><td>6,836.0</td><td>VWAP20（重新站上＝短線空方結構翻多）</td></tr>
-  <tr><td>R6</td><td>7,030</td><td>波段高＠53（突破＝整理結束、主升啟動）</td></tr>
-  <tr><td>R7</td><td>7,515.9</td><td>布林上軌（估值與情緒雙重壓力帶）</td></tr>
-</table></div>
-<p>---</p>
-<h2 id="5. 短線劇本（未來 3 日，2026-07-14 ～ 07-16）">5. 短線劇本（未來 3 日，2026-07-14 ～ 07-16）</h2>
-<p>外部半導體賣壓（SOX -4.78%）將主導開盤情緒，但內資主力成本墊高＋營收催化提供下檔支撐，預期區間震盪、逢壓回落、逢撐有守。</p>
-<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">劇本 A｜區間消化（機率 45%）</td><td>開低測 6,660～6,637 後，受營收催化與主力護盤拉回 6,755～6,805，受制 MA20 與 SOX 弱勢壓回，收在 6,660～6,805 箱體內。</td></tr><tr><td class="lbl">劇本 B｜外資拖累破撐（機率 35%）</td><td>SOX 續跌＋借券再增，摜破 6,660 測 6,525～6,484（元大-大雅成本線）找支撐，當日出現長下影後收復部分跌幅。</td></tr><tr><td class="lbl">劇本 C｜催化帶量突破（機率 20%）</td><td>半導體設備族群續強、量比≥1.4 站穩 POC 6,773，一舉收復 MA20（6,805）並挑戰 7,030，啟動短線攻擊波。</td></tr></table>
-<blockquote>Kronos 路徑預測：目標 6,823（＋1.75%）、24h 上漲機率 80%、預測波動率 88.4%；TimesFM 看漲＋1.08%。兩模型偏多，但須以量能確認為前提，勿追價。</blockquote>
-<p>---</p>
-<h2 id="6. 波段劇本（1 ～ 3 個月）">6. 波段劇本（1 ～ 3 個月）</h2>
-<p>基本面（營收年增翻倍）是中期上攻引擎，技術面（跌破均線）與外部（SOX、外資調節）是壓制力。三情景：</p>
-<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">樂觀｜基本面主導突破（機率 40%）</td><td>SOX 止跌、大盤回穩，7769 在 6,395～7,030 完成洗盤，Q2 EPS 因 6 月營收爆發優於預估（33.11→上修），帶量突破 7,030 挑戰 7,500～8,000。</td></tr><tr><td class="lbl">中性｜高檔箱型整理（機率 35%）</td><td>6,000～7,000 區間反覆洗盤，元大-大雅型主力續堆量，等待財報與外部環境轉多訊號。</td></tr><tr><td class="lbl">悲觀｜M 頭成形（機率 25%）</td><td>SOX 續崩、外資倒貨加速，摜破頸線 6,395，等幅測量指向 5,760；借券連增確認出貨。</td></tr></table>
-<p>---</p>
-<h2 id="7. 風險警訊（嚴重性分級）">7. 風險警訊（嚴重性分級）</h2>
-<table class="kv"><th>項目</th><th>內容</th><tr><td class="lbl">🔴 高｜費半 SOX -4.78% 摜破 20 日均線</td><td>外部半導體賣壓直接拖累 7769 開盤，觀察能否抗跌。</td></tr><tr><td class="lbl">🔴 高｜外資法人同步減碼</td><td>高盛 -80、大摩 -50、瑞銀 -27，且外資持股比率與股數雙降（35,018,555←35,116,603），為最實質的籌碼賣壓。</td></tr><tr><td class="lbl">🟠 中｜借券賣出淨增 +11,000 至 85,000 股</td><td>空單升溫；若連續 3 日累增，警訊升級為出貨。</td></tr><tr><td class="lbl">🟠 中｜技術結構弱勢</td><td>收盤低於 MA20（-1.5%）、VWAP20、POC；advanced_score -30；ML RSI Analog 偏空（analog_score -0.3642、rank 3.18/10）。</td></tr><tr><td class="lbl">🟡 低｜模型過度樂觀</td><td>系統「共振 100%」與風險遮罩後 82 分、偏空 ML、SOX 弱勢矛盾；決策請以遮罩後 82 分為準。</td></tr><tr><td class="lbl">🟡 低｜M 頭雛形</td><td>頸線 6,395 若帶量跌破，測量目標 5,760，為尾部風險而非主基調。</td></tr></table>
-<p>---</p>
-<h2 id="8. 合理估值區間（Forward PEG，NTM EPS 103.37 元）">8. 合理估值區間（Forward PEG，NTM EPS 103.37 元）</h2>
-<p>現價 6,705 對應 P/E 64.9 倍、主表 PEG（g＝61.74%）≈ 1.05，已落在「合理價值偏上緣」——便宜成長的甜點區已基本反應，後續為「財報確認」而非「估值修復」行情。若 Q2 EPS 因 6 月營收爆發優於預估 33.11，NTM EPS 上修將整體區間上移。</p>
-<div style="overflow-x:auto;"><table>
-  <tr><th>情景</th><th>PEG 假設</th><th>合理股價區間</th><th>評價</th></tr>
-  <tr><td>保守</td><td>主表 g、PEG 0.9～1.0</td><td>5,740 ～ 6,380</td><td>成長不變但本益比壓縮；若改用保守情景 g＝36.53%、PEG 1.0 則降至 3,776（成長趨緩極端底線，機率低但須納入尾部）</td></tr>
-  <tr><td>中性</td><td>主表 g、PEG 1.0～1.1</td><td>6,380 ～ 7,020</td><td>現價 6,705 位於此區下緣，屬「合理持有、不便宜」</td></tr>
-  <tr><td>樂觀</td><td>主表 g、PEG 1.1～1.2（含 EPS beat）</td><td>7,020 ～ 7,660</td><td>動能溢價＋Q2 優於預期，逼近布林上軌前的合理高檔</td></tr>
-</table></div>
-<p>---</p>
-<h2 id="9. 操作建議">9. 操作建議</h2>
-<p>持股者（均價 6,612，浮盈＋1.4%）
-- 續抱為主，享營收動能與主力鎖倉紅利；移動停利設於跌破 6,484（元大-大雅成本線）減碼一半，摜破 6,395（頸線）全數出清。
-- 不追高，6,755～6,805 區間若量能不足可逢高調節 1/3 鎖利。</p>
-<p>空手者
-- 現價 6,705 已非低估，不宜追價；等待回測支撐的買點勝率與賠率較佳。</p>
-<p>加碼價位
-- 第一加碼：6,637～6,660（Fib 0.618 共振＋前支撐），量縮不破才接。
-- 第二加碼：6,484～6,525（主力成本線＋抄底區上沿），分批建立。
-- 第三加碼（大膽）：6,094 布林下軌，僅限 CCI/MFI/KD 同步轉正時。</p>
-<p>止損價位
-- 短線停損：6,055（偏多參考停損，破則結構轉空）。
-- 波段嚴格停損：6,092（抄底紀律線），摜破代表 M 頭機率驟升，離場觀望。</p>
-<p>---</p>
-<h2 id="10. 法人觀點小結">10. 法人觀點小結</h2>
-<p>1. 基本面是最強護城河：6 月營收年增翻倍、月增＋28.4%，Q2 EPS 具上修潛力，是對抗技術弱勢與外部賣壓的根本底氣，中期不看空。
-2. 籌碼呈內外資換手：內資主力（元大系、國泰、凱基）低檔鎖倉獲利豐厚，外資逢高調節但未全面棄守（成本亦高於現價），當前為洗盤非出貨。
-3. 技術面與外部環境是短期逆風：跌破 MA20/VWAP、SOX -4.78%、台指期貼水 296 點，短線上攻需量能確認，忌無量追價。
-4. 估值已合理、不便宜：現價 PEG≈1.05 處合理價值上緣，後續行情由「財報確認」驅動，買點應等回測支撐（6,637／6,484）而非追高。
-5. 操作紀律凌駕情緒：以 6,395 頸線為多空總司令部，守則抱、破則撤；模型「100% 共振」須折價為遮罩後 82 分使用，避免過度樂觀。</p>
-<blockquote>本報告為量化模型輔助之機構級解讀，非個股買賣建議；所有價位均為機率參考，實際進出請依當日量價與總體環境調整。</blockquote>
-
+      <div id="report-body"></div>
     </div>
     <div class="card">
       <h3>📌 重點摘要</h3>
       <div id="summary"></div>
-      <script>
-        (function(){
-          const h2s = document.querySelectorAll('.wrap h2');
-          const box = document.getElementById('summary');
-          const map = {
-            '核心診斷': '🎯', '籌碼判斷': '💎', '關鍵支撐位': '🛡️', '關鍵壓力位': '🔺',
-            '短線劇本': '📅', '波段劇本': '🌊', '風險警訊': '⚠️', '合理估值區間': '💡', '操作建議': '✅', '法人觀點小結': '🧠'
-          };
-          let html = '';
-          h2s.forEach(el => {
-            const t = el.textContent.trim();
-            const key = t.split('（')[0].split('(')[0].trim();
-            const icon = map[key] || '📌';
-            html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--border);"><div style="width:28px;text-align:center;">' + icon + '</div><div style="font-size:13px;opacity:.9;">' + t + '</div></div>';
-          });
-          box.innerHTML = html || '<p style="opacity:.7;font-size:13px;">請開啟報告全文查看。</p>';
-        })();
-      </script>
     </div>
   </div>
 
   <div class="footer">本分析為機構級視角的判斷框架，實際交易請配合自身風險承受度與資金控管，並落實機械式止損紀律。祝交易順利。</div>
 </div>
+
+<script>
+const ENC = {"salt": "bLQ78tmO6QOmnqkExQLWOQ==", "iv": "a3CJPTKjrYsVWcVd", "ct": "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"};
+
+async function deriveKey(password, salt) {
+  const enc = new TextEncoder();
+  const baseKey = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt: salt, iterations: 100000, hash: 'SHA-256' },
+    baseKey,
+    { name: 'AES-GCM', length: 256 },
+    false,
+    ['decrypt']
+  );
+}
+
+function b64ToBuf(b64) {
+  const bin = atob(b64);
+  const buf = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+  return buf;
+}
+
+async function unlock() {
+  const errEl = document.getElementById('err');
+  errEl.textContent = '';
+  const pw = document.getElementById('pw').value;
+  if (!pw) { errEl.textContent = '請輸入密碼'; return; }
+  try {
+    const salt = b64ToBuf(ENC.salt);
+    const iv = b64ToBuf(ENC.iv);
+    const ct = b64ToBuf(ENC.ct);
+    const key = await deriveKey(pw, salt);
+    const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, key, ct);
+    const html = new TextDecoder().decode(plainBuf);
+    document.getElementById('report-body').innerHTML = html;
+    buildSummary();
+    document.getElementById('lock').style.display = 'none';
+    document.getElementById('main').style.visibility = 'visible';
+  } catch (e) {
+    errEl.textContent = '密碼錯誤或解密失敗';
+  }
+}
+
+function buildSummary() {
+  const h2s = document.querySelectorAll('#report-body h2');
+  const box = document.getElementById('summary');
+  const map = {
+    '核心診斷': '🎯', '籌碼判斷': '💎', '關鍵支撐位': '🛡️', '關鍵壓力位': '🔺',
+    '短線劇本': '📅', '波段劇本': '🌊', '風險警訊': '⚠️', '合理估值區間': '💡', '操作建議': '✅', '法人觀點小結': '🧠'
+  };
+  let html = '';
+  h2s.forEach(el => {
+    const t = el.textContent.trim();
+    const key = t.split('（')[0].split('(')[0].trim();
+    const icon = map[key] || '📌';
+    html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--border);"><div style="width:28px;text-align:center;">' + icon + '</div><div style="font-size:13px;opacity:.9;">' + t + '</div></div>';
+  });
+  box.innerHTML = html || '<p style="opacity:.7;font-size:13px;">請開啟報告全文查看。</p>';
+}
+
+document.getElementById('unlock').addEventListener('click', unlock);
+document.getElementById('pw').addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+</script>
 </body>
 </html>
